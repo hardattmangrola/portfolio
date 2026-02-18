@@ -14,9 +14,17 @@ const SmoothCursor = () => {
         };
 
         window.addEventListener("mousemove", mouseMove);
+        window.addEventListener("touchmove", (e) => {
+            const touch = e.touches[0];
+            setMousePosition({
+                x: touch.clientX,
+                y: touch.clientY
+            });
+        });
 
         return () => {
             window.removeEventListener("mousemove", mouseMove);
+            window.removeEventListener("touchmove", mouseMove);
         };
     }, []);
 
@@ -38,7 +46,7 @@ const SmoothCursor = () => {
     return (
         <>
             <motion.div
-                className="fixed top-0 left-0 w-8 h-8 rounded-full border border-white pointer-events-none z-[9999] hidden lg:block"
+                className="fixed top-0 left-0 w-8 h-8 rounded-full border border-white pointer-events-none z-[9999]"
                 variants={variants}
                 animate={cursorVariant}
                 transition={{
@@ -49,7 +57,7 @@ const SmoothCursor = () => {
                 }}
             />
             <motion.div
-                className="fixed top-0 left-0 w-2 h-2 bg-blue-500 rounded-full pointer-events-none z-[9999] hidden lg:block"
+                className="fixed top-0 left-0 w-2 h-2 bg-blue-500 rounded-full pointer-events-none z-[9999]"
                 animate={{ x: mousePosition.x - 4, y: mousePosition.y - 4 }}
                 transition={{
                     type: "spring",

@@ -2,11 +2,21 @@ import React from 'react';
 import Section from './Section';
 import { motion } from 'framer-motion';
 
+import HireMitraPic from '../assets/hiremitra.jpg';
+import MindSprintPic from '../assets/mindsprint.png';
+import PriceSensePic from '../assets/pricesense.jpg';
+import InodePic from '../assets/inode.png';
+import PixVerNetPic from '../assets/pixvernet.jpg';
+import Talk2DBPic from '../assets/talk2db.png';
+import CaptionAIPic from '../assets/captionAi.png';
+
 const Projects = () => {
   const projects = [
     {
       title: "HireMitraAI",
       tech: "Streamlit, Groq, PyMuPDF, Apify",
+      date: "Oct 2025",
+      pic: HireMitraPic,
       description: "An AI-assisted job recommendation application that analyzes a PDF resume and surfaces top job postings from LinkedIn and Naukri.",
       achievements: [
         "Resume analysis from PDF upload with AI-generated summary and skill gaps.",
@@ -19,6 +29,7 @@ const Projects = () => {
       title: "MindSprint",
       tech: "React, Node.js, MongoDB, AI-Powered",
       date: "Sept 2025",
+      pic: MindSprintPic,
       description: "A comprehensive wellness tracking application that combines AI-powered chat assistance with detailed mood and wellness monitoring.",
       achievements: [
         "Provides users with personalized insights and data-driven wellness reports.",
@@ -31,6 +42,7 @@ const Projects = () => {
       title: "PriceSense",
       tech: "PyTorch, Transformers, CLIP, DeBERTa-v3",
       date: "Oct 2025",
+      pic: PriceSensePic,
       description: "Developed a multimodal regression system combining text, image, and numeric features for accurate product price prediction.",
       achievements: [
         "Integrated DeBERTa-v3, CLIP-ViT-B/16, and numeric encoders using an Adaptive Attention Fusion and Mixture-of-Experts architecture.",
@@ -41,6 +53,8 @@ const Projects = () => {
     {
       title: "UNIX Inode Simulator",
       tech: "Interactive Visualization",
+      date: "Sept 2025",
+      pic: InodePic,
       description: "Interactive visualization of how UNIX-like file systems use inodes to manage files.",
       achievements: [
         "Demonstrates inode-based system powering UNIX file systems.",
@@ -53,6 +67,7 @@ const Projects = () => {
       title: "PixVerNet",
       tech: "PyTorch, EfficientNetV2, Pix2Pix GAN",
       date: "Oct 2025",
+      pic: PixVerNetPic,
       description: "Implemented an image authenticity classification pipeline trained on the 11GB AI vs Human Generated Images dataset.",
       achievements: [
         "Utilized EfficientNetV2 for precise real vs AI image detection.",
@@ -65,6 +80,7 @@ const Projects = () => {
       title: "Talk2DB",
       tech: "React, Flask, MySQL, Pandas, Gemini API",
       date: "Sept 2025",
+      pic: Talk2DBPic,
       description: "Developed an LLM-powered Natural Language Query System that converts plain-English prompts into executable SQL.",
       achievements: [
         "Engineered a multi-CSV ingestion and auto-relation pipeline.",
@@ -76,6 +92,7 @@ const Projects = () => {
       title: "CaptionAI",
       tech: "FastAPI, BLIP, Transformers, HTML/CSS/JS",
       date: "April 2025",
+      pic: CaptionAIPic,
       description: "An AI-powered Image Caption Generator that creates meaningful captions for your images using BLIP.",
       achievements: [
         "Generates AI-based captions from uploaded images.",
@@ -102,7 +119,7 @@ const Projects = () => {
 
             <div className="relative z-10 flex flex-col h-full">
               <div className="w-full h-48 bg-gray-900/50 rounded-xl mb-6 overflow-hidden border border-white/5 flex items-center justify-center group-hover:border-white/10 transition-colors">
-                <span className="text-gray-600 font-mono text-sm">Project Image</span>
+                <img src={project.pic} alt={project.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
               </div>
 
               <div className="flex justify-between items-start mb-4">
