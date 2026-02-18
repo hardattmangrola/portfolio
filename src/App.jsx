@@ -7,9 +7,12 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import EducationAwards from './components/EducationAwards';
 
+import SmoothCursor from './components/ui/SmoothCursor';
+
 function App() {
   return (
-    <div className="relative text-white font-sans selection:bg-blue-500 selection:text-white">
+    <div className="relative text-white font-sans selection:bg-blue-500 selection:text-white cursor-none">
+      <SmoothCursor />
       <Background />
       <Navbar />
 

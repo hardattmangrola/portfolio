@@ -17,7 +17,7 @@ const Skills = () => {
         },
         {
             title: "Cloud & Tools",
-            skills: ["AWS (Basic)", "Git", "GitHub", "Linux", "VS Code", "Tableau", "Knime"]
+            skills: ["AWS", "Git", "GitHub", "Linux", "VS Code", "Tableau", "Knime"]
         },
         {
             title: "Machine Learning & AI",
@@ -33,7 +33,11 @@ const Skills = () => {
                     <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors">
                         <h3 className="text-xl font-semibold mb-4 text-gray-200">{cat.title}</h3>
                         <div className="flex flex-wrap gap-2">
-                            {cat.skills.map((skill, sIdx) => (
+                            {cat.categories ? cat.categories.map((skill, sIdx) => ( // Fallback if structure was different, but going with original
+                                <span key={sIdx} className="px-3 py-1 bg-white/10 rounded-full text-sm text-gray-300 font-mono">
+                                    {skill}
+                                </span>
+                            )) : cat.skills.map((skill, sIdx) => (
                                 <span key={sIdx} className="px-3 py-1 bg-white/10 rounded-full text-sm text-gray-300 font-mono">
                                     {skill}
                                 </span>

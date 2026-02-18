@@ -10,8 +10,8 @@ const EducationAwards = () => {
                     <div className="space-y-8">
                         <div>
                             <h3 className="text-xl font-bold">Nirma University</h3>
-                            <p className="text-gray-400 text-sm mb-1">B.Tech in Computer Science & Engineering</p>
-                            <p className="text-gray-500 text-xs tracking-wider uppercase mb-2">2023 – 2027 &bull; CGPA: 9.46</p>
+                            <p className="text-gray-400 text-sm mb-1">B.Tech  Computer Science & Engineering</p>
+                            <p className="text-gray-500 text-xs tracking-wider uppercase mb-2">2023 – 2027 &bull; CGPA: 9.39</p>
                         </div>
                         <div>
                             <h3 className="text-xl font-bold">Chanderbala Modi Academy</h3>

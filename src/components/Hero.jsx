@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Resume from '../assets/Hardattsinh_Resume.pdf';
 
 const Hero = () => {
   const text = "Hello, I'm Hardatt";
@@ -57,9 +58,14 @@ const Hero = () => {
           transition={{ delay: 1.8, duration: 0.8 }}
           className="mt-8"
         >
-          <a href="#projects" className="px-6 py-3 border border-gray-700 rounded-full hover:bg-white hover:text-black transition-all duration-300">
-            View Work
-          </a>
+          <div className="flex gap-4">
+            <a href="#projects" className="px-6 py-3 border border-gray-700 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+              View Work
+            </a>
+            <a href={Resume} download="Hardattsinh_Resume.pdf" className="px-6 py-3 border border-gray-700 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+              Resume
+            </a>
+          </div>
         </motion.div>
       </div>
 

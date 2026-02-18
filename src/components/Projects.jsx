@@ -18,6 +18,7 @@ const Projects = () => {
     {
       title: "MindSprint",
       tech: "React, Node.js, MongoDB, AI-Powered",
+      date: "Sept 2025",
       description: "A comprehensive wellness tracking application that combines AI-powered chat assistance with detailed mood and wellness monitoring.",
       achievements: [
         "Provides users with personalized insights and data-driven wellness reports.",
@@ -49,17 +50,6 @@ const Projects = () => {
       link: "https://github.com/hardattmangrola/Inode-File-System-Stimulator"
     },
     {
-      title: "CaptionAI",
-      tech: "FastAPI, BLIP, Transformers, HTML/CSS/JS",
-      description: "An AI-powered Image Caption Generator that creates meaningful captions for your images using BLIP.",
-      achievements: [
-        "Generates AI-based captions from uploaded images.",
-        "FastAPI backend with Hugging Face Transformers.",
-        "One-click Copy, Download, or Share options."
-      ],
-      link: "https://github.com/hardattmangrola/CaptionAI"
-    },
-    {
       title: "PixVerNet",
       tech: "PyTorch, EfficientNetV2, Pix2Pix GAN",
       date: "Oct 2025",
@@ -81,40 +71,52 @@ const Projects = () => {
         "Built RESTful APIs using Flask and integrated with a React-based frontend featuring interactive query results and theme switching."
       ],
       link: "https://github.com/hardattmangrola/Talk2DB"
-    }
+    },
+    {
+      title: "CaptionAI",
+      tech: "FastAPI, BLIP, Transformers, HTML/CSS/JS",
+      date: "April 2025",
+      description: "An AI-powered Image Caption Generator that creates meaningful captions for your images using BLIP.",
+      achievements: [
+        "Generates AI-based captions from uploaded images.",
+        "FastAPI backend with Hugging Face Transformers.",
+        "One-click Copy, Download, or Share options."
+      ],
+      link: "https://github.com/hardattmangrola/CaptionAI"
+    },
   ];
 
   return (
     <Section id="projects" className="py-20">
-      <h2 className="text-4xl font-bold mb-12 font-mono">Selected Projects<span className="text-blue-500">.</span></h2>
+      <h2 className="text-4xl font-bold mb-12 font-mono">My Projects<span className="text-blue-500">.</span></h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {projects.map((project, idx) => (
           <motion.div
             key={idx}
             whileHover={{ y: -5 }}
-            className="group relative bg-[#0a0a0a] border border-white/10 rounded-2xl p-8 overflow-hidden hover:border-white/20 transition-all"
+            className="group relative bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 overflow-hidden hover:border-white/20 transition-all flex flex-col h-full"
           >
             <div className="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-40 transition-opacity">
               <svg className="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
             </div>
 
-            <div className="relative z-10">
+            <div className="relative z-10 flex flex-col h-full">
+              <div className="w-full h-48 bg-gray-900/50 rounded-xl mb-6 overflow-hidden border border-white/5 flex items-center justify-center group-hover:border-white/10 transition-colors">
+                <span className="text-gray-600 font-mono text-sm">Project Image</span>
+              </div>
+
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-2xl font-bold">{project.title}</h3>
                 <span className="text-xs font-mono text-gray-500 border border-gray-800 px-2 py-1 rounded">{project.date}</span>
               </div>
               <p className="text-sm text-blue-400 font-mono mb-6">{project.tech}</p>
-              <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
+              <p className="text-gray-300 mb-8 leading-relaxed flex-grow">{project.description}</p>
 
-              <ul className="space-y-2 mb-8 list-disc list-inside text-sm text-gray-400">
-                {project.achievements.map((ach, i) => (
-                  <li key={i}>{ach}</li>
-                ))}
-              </ul>
-
-              <a href={project.link} className="inline-flex items-center text-sm font-semibold hover:text-blue-400 transition-colors">
-                View on GitHub <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-              </a>
+              <div className="mt-auto">
+                <a href={project.link} className="inline-flex items-center text-sm font-semibold hover:text-blue-400 transition-colors">
+                  View on GitHub <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+              </div>
             </div>
           </motion.div>
         ))}
